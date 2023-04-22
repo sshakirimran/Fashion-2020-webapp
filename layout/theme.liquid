@@ -503,14 +503,5 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    {% if customer %}
-      <form action="/account" method="post">
-        <input
-          type="hidden"
-          name="_method"
-          value="delete">
-        <input type="submit" value="Delete Account">
-      </form>
-    {% endif %}
   </body>
 </html>
