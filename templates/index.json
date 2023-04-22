@@ -72,6 +72,33 @@
         "padding_bottom": 68
       }
     },
+    "f7068131-abbf-4f9d-9063-960c7d99eba8": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "USA Independence Day ",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "usa-independence-day",
+        "products_to_show": 25,
+        "columns_desktop": 5,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 56,
+        "padding_bottom": 68
+      }
+    },
     "social_widget_55574": {
       "type": "social-widget",
       "blocks": {
@@ -117,6 +144,7 @@
   "order": [
     "image-with-text",
     "featured-collection",
+    "f7068131-abbf-4f9d-9063-960c7d99eba8",
     "social_widget_55574"
   ]
 }
