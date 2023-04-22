@@ -18,7 +18,7 @@
           <p>{{ customer.default_address.address2 }}</p>
         {% endif %}
         <p>{{ customer.default_address.city }},
-          {% if customer.default_address.province_code %}
+          {% if address.province_code %}
             {{ customer.default_address.province_code }},
           {% endif %}
           {{ customer.default_address.country }}</p>
@@ -27,7 +27,16 @@
       {% endif %}
       <a id="view_address" href="/account/addresses">View Addresses ({{ customer.addresses_count }})</a>
     </div>
-    <button id="delete-account" onclick="confirmDelete()">Delete Account</button>
+
+    <!-- DELETE ACCOUNT FORM -->
+    <form method="POST" action="/account/close">
+      <input
+        type="hidden"
+        name="_method"
+        value="delete">
+      <input type="submit" value="Delete Account">
+    </form>
+    <!-- END DELETE ACCOUNT FORM -->
   </div>
 </div>
 
@@ -67,12 +76,3 @@
     <p>You haven't placed any orders yet.</p>
   {% endif %}
 </div>
-
-<script>
-  function confirmDelete() {
-    var result = confirm("Are you sure you want to delete your account?");
-    if (result) {
-      window.location.href = "/account/close";
-    }
-  }
-</script>
