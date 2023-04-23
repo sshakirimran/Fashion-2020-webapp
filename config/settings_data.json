@@ -201,10 +201,10 @@
         "disabled": true,
         "settings": {
           "message": "💌 JOIN TO OUR NEWSLETTER AND GET 10% OFF",
+          "thank_you_message": "Thank you!",
           "button": "SIGN UP",
           "select_show_bar": "25_percent",
           "position": "stickyBottom",
-          "thank_you_message": "Thank you!",
           "checkbox_close": true,
           "font": "inter_n7",
           "scale": 115,
@@ -239,7 +239,13 @@
         }
       },
       "fd96e98d-755f-4672-9a4a-60a26e530e70": {
-        "type": "shopify:\/\/apps\/instagram-feed-story-tiktok\/blocks\/social-widget\/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
+        "type": "shopify:\/\/apps\/socialwidget-instagram-feed\/blocks\/social-widget\/508b8d5b-b176-4dc6-a0ba-2b222db6eb79",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "7555218208816688692": {
+        "type": "shopify:\/\/apps\/rivo-popups-email-pop-ups\/blocks\/app-embed\/48a5a3ef-b6ff-431f-842f-6f17862c4a63",
         "disabled": false,
         "settings": {
         }
