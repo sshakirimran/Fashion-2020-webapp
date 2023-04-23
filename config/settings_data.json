@@ -214,15 +214,9 @@
         "settings": {
         }
       },
-      "7555218208816688692": {
-        "type": "shopify:\/\/apps\/rivo-popups-email-pop-ups\/blocks\/app-embed\/48a5a3ef-b6ff-431f-842f-6f17862c4a63",
-        "disabled": true,
-        "settings": {
-        }
-      },
       "7607087370032000517": {
         "type": "shopify:\/\/apps\/quick-banner-announcement-bars\/blocks\/emailSignupBar\/3421d53e-fb02-449c-a9ef-daf28f28450a",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "message": "💌 JOIN TO OUR NEWSLETTER AND GET 10% OFF",
           "thank_you_message": "Thank you!",
@@ -247,6 +241,12 @@
           "border_size": 0,
           "horizontal_space": 17,
           "vertical_space": 18
+        }
+      },
+      "7555218208816688692": {
+        "type": "shopify:\/\/apps\/rivo-popups-email-pop-ups\/blocks\/app-embed\/48a5a3ef-b6ff-431f-842f-6f17862c4a63",
+        "disabled": false,
+        "settings": {
         }
       }
     }
