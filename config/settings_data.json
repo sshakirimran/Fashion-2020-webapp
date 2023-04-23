@@ -196,36 +196,6 @@
           "vertical_space": 18
         }
       },
-      "7607087370032000517": {
-        "type": "shopify:\/\/apps\/quick-banner-announcement-bars\/blocks\/emailSignupBar\/3421d53e-fb02-449c-a9ef-daf28f28450a",
-        "disabled": false,
-        "settings": {
-          "message": "💌 JOIN TO OUR NEWSLETTER AND GET 10% OFF",
-          "thank_you_message": "Thank you!",
-          "button": "SIGN UP",
-          "select_show_bar": "25_percent",
-          "position": "stickyTop",
-          "checkbox_close": true,
-          "font": "inter_n7",
-          "scale": 115,
-          "button_font": "inter_n7",
-          "button_font_size": 115,
-          "color_text": "#202223",
-          "color_border": "#000000",
-          "button_background_color": "#ffffff",
-          "button_background_opacity": 100,
-          "button_text_color": "#202223",
-          "button_border_color": "#ffffff",
-          "color_background": "linear-gradient(90deg, rgba(161, 196, 253, 1) 30%, rgba(194, 233, 251, 1) 100%)",
-          "background_image": "",
-          "opacity_percentage": 0,
-          "select_button_style": "rounded_solid",
-          "select_text_align": "t-f",
-          "border_size": 0,
-          "horizontal_space": 17,
-          "vertical_space": 18
-        }
-      },
       "13694372020385051692": {
         "type": "shopify:\/\/apps\/analyzely-google-analytics-4\/blocks\/analyzely\/b3a3a697-6f42-4507-a5ae-c447f6da2c9d",
         "disabled": true,
@@ -248,6 +218,35 @@
         "type": "shopify:\/\/apps\/rivo-popups-email-pop-ups\/blocks\/app-embed\/48a5a3ef-b6ff-431f-842f-6f17862c4a63",
         "disabled": true,
         "settings": {
+        }
+      },
+      "7607087370032000517": {
+        "type": "shopify:\/\/apps\/quick-banner-announcement-bars\/blocks\/emailSignupBar\/3421d53e-fb02-449c-a9ef-daf28f28450a",
+        "disabled": false,
+        "settings": {
+          "message": "💌 JOIN TO OUR NEWSLETTER AND GET 10% OFF",
+          "thank_you_message": "Thank you!",
+          "button": "SIGN UP",
+          "select_show_bar": "5000_msec",
+          "position": "stickyTop",
+          "checkbox_close": true,
+          "font": "inter_n7",
+          "scale": 115,
+          "button_font": "inter_n7",
+          "button_font_size": 115,
+          "color_text": "#202223",
+          "color_border": "#000000",
+          "button_background_color": "#ffffff",
+          "button_background_opacity": 100,
+          "button_text_color": "#202223",
+          "button_border_color": "#ffffff",
+          "color_background": "linear-gradient(90deg, rgba(161, 196, 253, 1) 30%, rgba(194, 233, 251, 1) 100%)",
+          "opacity_percentage": 0,
+          "select_button_style": "rounded_solid",
+          "select_text_align": "t-f",
+          "border_size": 0,
+          "horizontal_space": 17,
+          "vertical_space": 18
         }
       }
     }
