@@ -173,7 +173,7 @@
         "settings": {
           "message": "🎁 SPECIAL DISCOUNT — 10% OFF ALL ITEMS",
           "button": "SHOP NOW",
-          "select_show_bar": "5000_msec",
+          "select_show_bar": "100_percent",
           "position": "stickyBottom",
           "checkbox_close": true,
           "font": "roboto_n9",
