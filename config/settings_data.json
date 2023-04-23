@@ -189,7 +189,7 @@
           "color_background": "linear-gradient(180deg, rgba(237, 255, 167, 1), rgba(191, 233, 22, 1) 26.44%, rgba(191, 233, 22, 1) 90.314%, rgba(160, 233, 33, 1) 92.932%, rgba(255, 19, 97, 1) 100%)",
           "background_image": "",
           "opacity_percentage": 100,
-          "select_button_style": "solid",
+          "select_button_style": "rounded_solid",
           "select_text_align": "i-t-b",
           "border_size": 0,
           "horizontal_space": 17,
