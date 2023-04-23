@@ -201,10 +201,10 @@
         "disabled": false,
         "settings": {
           "message": "💌 JOIN TO OUR NEWSLETTER AND GET 10% OFF",
+          "thank_you_message": "Thank you!",
           "button": "SIGN UP",
           "select_show_bar": "25_percent",
           "position": "stickyTop",
-          "thank_you_message": "Thank you!",
           "checkbox_close": true,
           "font": "inter_n7",
           "scale": 115,
@@ -246,7 +246,7 @@
       },
       "7555218208816688692": {
         "type": "shopify:\/\/apps\/rivo-popups-email-pop-ups\/blocks\/app-embed\/48a5a3ef-b6ff-431f-842f-6f17862c4a63",
-        "disabled": false,
+        "disabled": true,
         "settings": {
         }
       }
