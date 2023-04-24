@@ -697,10 +697,8 @@
         </details>
       </details-modal>
 {%- if customer -%}
-   <a href="/account/logout" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
-       <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top">
-            Delete
-          </button>
+   <a href="/account/logout" class="button button--primary">
+       Delete
    </a>
 {%- endif -%}
       {%- if shop.customer_accounts_enabled -%}
