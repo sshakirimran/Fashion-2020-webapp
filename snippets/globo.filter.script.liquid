@@ -1,0 +1,112 @@
+{%- assign globo_search = true -%}
+{%- assign home_filter = false -%}
+{%- assign has_form = false -%}
+{%- if request.page_type != 'index' -%}{%- assign home_filter = false -%}{%- endif -%}
+{%- if globo_search or request.page_type == 'collection' or request.page_type == 'search' or home_filter or has_form -%}
+{%- assign assets_url = 'product-1.png' | asset_img_url: '50x' | split: 'product-1_50x.png' -%}
+{%- assign files_url  = 'product-1.png' | file_img_url: '50x' | split: 'product-1_50x.png' -%}
+{%- assign primary_locale = 'null' -%}
+{%- for locale in shop.published_locales -%}{%- if locale.primary -%}{%- assign primary_locale = locale.iso_code | json -%}{%- endif -%}{%- endfor -%}
+<style>.spf-filter-loading #gf-products > *:not(.spf-product--skeleton), .spf-filter-loading [data-globo-filter-items] > *:not(.spf-product--skeleton){visibility: hidden; opacity: 0}</style>
+<link rel="preconnect" href="https://filter-en.globosoftware.net" />
+<script>
+  document.getElementsByTagName('html')[0].classList.add('spf-filter-loading');
+  window.addEventListener("globoFilterRenderCompleted",function(e){document.getElementsByTagName('html')[0].classList.remove('spf-filter-loading')})
+  window.sortByRelevance = false;
+  window.moneyFormat = "{{ shop.money_format | replace: '"', "'" }}";
+  window.GloboMoneyFormat = "{{ shop.money_format | replace: '"', "'" }}";
+  window.GloboMoneyWithCurrencyFormat = "{{ shop.money_with_currency_format | replace: '"', "'" }}";
+  window.filterPriceRate = 1;
+  window.filterPriceAdjustment = 1;
+
+  window.shopCurrency = {{shop.currency | json}};
+  window.currentCurrency = {{cart.currency.iso_code | json}};
+
+  window.isMultiCurrency = {% assign enabled_currencies_size = shop.enabled_currencies | size %}{% if enabled_currencies_size > 1 and true %}true{% else %}false{% endif %};
+  window.globoFilterAssetsUrl = '{{ assets_url[0] }}';
+  window.assetsUrl = '{{ assets_url[0] }}';
+  window.filesUrl = '{{ files_url[0] }}';
+  var page_id = {% if request.page_type contains 'collection' %}{% if collection.id %}{{collection.id | default: 1}}{% else %}1{% endif %}{% elsif request.page_type contains 'search' %}2{% else %}0{% endif %};
+  var globo_filters_json = {"default":1052,"1":1056}
+  var GloboFilterConfig = {
+    api: {
+      filterUrl: "https://filter-en.globosoftware.net/filter",
+      searchUrl: "https://filter-en.globosoftware.net/search",
+      url: "https://filter-en.globosoftware.net",
+    },
+    shop: {
+      name: "{{ shop.name | escape }}",
+      url: "{{ shop.url }}",
+      domain: "{{ shop.permanent_domain }}",
+      is_multicurrency: {% assign is_multicurrency = shop.enabled_currencies | size %}{% if is_multicurrency > 1 and true and true %}true{% else %}false{% endif %},
+      currency: {{shop.currency | json}},
+      cur_currency: {{cart.currency.iso_code | json}},
+      cur_locale: {{request.locale.iso_code | json}},
+      cur_country: {{ localization.country.iso_code | json}},
+      locale: {{primary_locale}},
+      root_url: "{%- if routes.root_url != "/" -%}{{ routes.root_url }}{%- endif -%}",
+      country_code: {{shop.address.country_code | json}},
+      product_image: {width: 360, height: 504},
+      no_image_url: "https://cdn.shopify.com/s/images/themes/product-1.png",
+      themeStoreId: 1356,
+      swatches:  {{ shop.metafields.globo.swatches | json }},
+      newUrlStruct: true,
+      translation: {"default":{"search":{"suggestions":"Suggestions","collections":"Collections","pages":"Pages","product":"Product","products":"Products","view_all":"Search for","view_all_products":"View all products","not_found":"Sorry, nothing found for","product_not_found":"No products were found","no_result_keywords_suggestions_title":"Popular searches","no_result_products_suggestions_title":"However, You may like","zero_character_keywords_suggestions_title":"Suggestions","zero_character_popular_searches_title":"Popular searches","zero_character_products_suggestions_title":"Trending products"},"form":{"heading":"Search products","select":"-- Select --","search":"Search","submit":"Search","clear":"Clear"},"filter":{"filter_by":"Filter By","clear_all":"Clear All","view":"View","clear":"Clear","in_stock":"In Stock","out_of_stock":"Out of Stock","ready_to_ship":"Ready to ship","search":"Search options","choose_values":"Choose values"},"sort":{"sort_by":"Sort By","manually":"Featured","availability_in_stock_first":"Availability","relevance":"Relevance","best_selling":"Best Selling","alphabetically_a_z":"Alphabetically, A-Z","alphabetically_z_a":"Alphabetically, Z-A","price_low_to_high":"Price, low to high","price_high_to_low":"Price, high to low","date_new_to_old":"Date, new to old","date_old_to_new":"Date, old to new","sale_off":"% Sale off"},"product":{"add_to_cart":"Add to cart","unavailable":"Unavailable","sold_out":"Sold out","sale":"Sale","load_more":"Load more","limit":"Show","search":"Search products","no_results":"Sorry, there are no products in this collection"}}},
+      redirects: {{ shop.metafields.globo.redirects | json }},
+      images: [],
+      settings: {{ settings | json }},
+      separate_options: null,
+      home_filter: {{home_filter}},
+      page: {{request.page_type | json}},
+      cache: {% if shop.metafields.globo.cacheInitRequest == false %}false{% else %}true{% endif %},
+      layout: "theme"
+    },
+    taxes: null,
+    special_countries: [],
+    adjustments: {"GBP_QA":1.5,"GBP_AE":1.5,"GBP_AI":1.5,"GBP_AG":1.5,"GBP_AW":1.5,"GBP_BS":1.5,"GBP_BB":1.5,"GBP_BZ":1.5,"GBP_BM":1.5,"GBP_VG":1.5,"GBP_KY":1.5,"GBP_CR":1.5,"GBP_CW":1.5,"GBP_DM":1.5,"GBP_DO":1.5,"GBP_SV":1.5,"GBP_GD":1.5,"GBP_GT":1.5,"GBP_HT":1.5,"GBP_HN":1.5,"GBP_JM":1.5,"GBP_MQ":1.5,"GBP_MS":1.5,"GBP_NI":1.5,"GBP_PA":1.5,"GBP_SX":1.5,"GBP_BL":1.5,"GBP_KN":1.5,"GBP_LC":1.5,"GBP_MF":1.5,"GBP_PM":1.5,"GBP_VC":1.5,"GBP_TT":1.5,"GBP_TC":1.5,"GBP_UM":1.5,"GBP_AX":1.5,"GBP_AL":1.5,"GBP_AD":1.5,"GBP_AM":1.5,"GBP_AT":1.5,"GBP_BY":1.5,"GBP_BE":1.5,"GBP_BA":1.5,"GBP_BG":1.5,"GBP_HR":1.5,"GBP_CY":1.5,"GBP_CZ":1.5,"GBP_DK":1.5,"GBP_EE":1.5,"GBP_FO":1.5,"GBP_FI":1.5,"GBP_FR":1.5,"GBP_GE":1.5,"GBP_DE":1.5,"GBP_GI":1.5,"GBP_GR":1.5,"GBP_GL":1.5,"GBP_GP":1.5,"GBP_GG":1.5,"GBP_HU":1.5,"GBP_IS":1.5,"GBP_IE":1.5,"GBP_IM":1.5,"GBP_IT":1.5,"GBP_JE":1.5,"GBP_XK":1.5,"GBP_LV":1.5,"GBP_LI":1.5,"GBP_LT":1.5,"GBP_LU":1.5,"GBP_MK":1.5,"GBP_MT":1.5,"GBP_YT":1.5,"GBP_MD":1.5,"GBP_MC":1.5,"GBP_ME":1.5,"GBP_NL":1.5,"GBP_NO":1.5,"GBP_PL":1.5,"GBP_PT":1.5,"GBP_RE":1.5,"GBP_RO":1.5,"GBP_SM":1.5,"GBP_RS":1.5,"GBP_SK":1.5,"GBP_SI":1.5,"GBP_ES":1.5,"GBP_SJ":1.5,"GBP_SE":1.5,"GBP_CH":1.5,"GBP_TR":1.5,"GBP_UA":1.5,"GBP_VA":1.5,"GBP_CA":1.5,"GBP_MX":1.5,"GBP_US":1.5,"GBP_AU":1.5,"GBP_CK":1.5,"GBP_FJ":1.5,"GBP_PF":1.5,"GBP_KI":1.5,"GBP_NR":1.5,"GBP_NC":1.5,"GBP_NZ":1.5,"GBP_NU":1.5,"GBP_NF":1.5,"GBP_PG":1.5,"GBP_PN":1.5,"GBP_WS":1.5,"GBP_SB":1.5,"GBP_TL":1.5,"GBP_TK":1.5,"GBP_TO":1.5,"GBP_TV":1.5,"GBP_VU":1.5,"GBP_WF":1.5,"GBP_AR":1.5,"GBP_BO":1.5,"GBP_BR":1.5,"GBP_BQ":1.5,"GBP_CL":1.5,"GBP_CO":1.5,"GBP_EC":1.5,"GBP_FK":1.5,"GBP_GF":1.5,"GBP_GY":1.5,"GBP_PY":1.5,"GBP_PE":1.5,"GBP_SR":1.5,"GBP_UY":1.5,"GBP_VE":1.5},
+
+    year_make_model: {
+      id: null
+    },
+    filter: {
+      id: globo_filters_json[page_id] || globo_filters_json['default'] || 0,
+      layout: 1,
+      showCount: true,
+      isLoadMore: 0,
+      filter_on_search_page: true
+    },
+    search:{
+      enable: {{globo_search}},
+      zero_character_suggestion: false,
+      layout: 1,
+    },
+    collection: {
+      id: {%- if request.page_type == 'collection' -%}{{ collection.id | default: 0 }}{%- else -%}0{%- endif -%},
+      handle: {%- if request.page_type == 'collection' -%}'{{ collection.handle }}'{%- else -%}''{%- endif -%},
+      sort: {% if request.page_type contains 'collection' %}"{{ collection.default_sort_by | default: 'best-selling' }}"{% elsif request.page_type contains 'search' %}'relevance'{% else %}'best-selling'{% endif %},
+      tags: {% if current_tags %}[{% for tag in current_tags %}{{ tag | json }},{{ tag | handle | json }}{% unless forloop.last %},{% endunless %}{% endfor %}]{% else %}null{% endif %},
+      vendor: {{ collection.current_vendor | json }},
+      type: {{ collection.current_type | json }},
+      term: {{ search.terms | escape | json }},
+      limit: 12,
+      products_count: {{collection.products_count | default: 0}},
+      excludeTags: null
+    },
+    customer: {% if customer %}{id: {{customer.id}}, tags: {{customer.tags | json}}}{% else %}false{% endif %},
+    selector: {
+      sortBy: '.collection-sorting',
+      pagination: '.pagination:first, .paginate:first, .pagination-custom:first, #pagination:first, #gf_pagination_wrap',
+      products: '.grid.grid-collage'
+    }
+  };
+
+</script>
+<script defer src="{{ 'v5.globo.filter.lib.js' | asset_url }}"></script>
+{% if request.page_type == 'collection' or request.page_type == 'search' or home_filter or has_form %}<link rel="preload stylesheet" href="{{ 'v5.globo.filter.css' | asset_url }}" as="style">
+{% endif %}
+{% if globo_search %}<link rel="preload stylesheet" href="{{ 'v5.globo.search.css' | asset_url }}" as="style">
+{% endif %}
+{% endif %}
+
+
+
