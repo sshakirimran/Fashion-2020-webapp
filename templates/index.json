@@ -48,7 +48,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Restocked Popular Item",
+        "title": "Restocked Popular Item<a href=\"\/collections\/best-selling-products\" target=\"_blank\" title=\"Best Selling Products\">\/collections\/best-selling-products<\/a>",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
