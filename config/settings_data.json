@@ -266,6 +266,12 @@
           "custom_css": "",
           "custom_js": ""
         }
+      },
+      "15849993549880743979": {
+        "type": "shopify:\/\/apps\/ga-free-gift-bogo\/blocks\/app-embeded\/58ed8460-f12d-44c1-87aa-ec47351b5fd7",
+        "disabled": false,
+        "settings": {
+        }
       }
     }
   },
