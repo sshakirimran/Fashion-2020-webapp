@@ -196,12 +196,6 @@
           "vertical_space": 18
         }
       },
-      "13694372020385051692": {
-        "type": "shopify:\/\/apps\/analyzely-google-analytics-4\/blocks\/analyzely\/b3a3a697-6f42-4507-a5ae-c447f6da2c9d",
-        "disabled": true,
-        "settings": {
-        }
-      },
       "2997326909215316540": {
         "type": "shopify:\/\/apps\/extra-menu-click-hover\/blocks\/embed-app\/ec904fae-fd98-4243-8db5-01051f1af95f",
         "disabled": true,
@@ -269,6 +263,12 @@
       },
       "15849993549880743979": {
         "type": "shopify:\/\/apps\/ga-free-gift-bogo\/blocks\/app-embeded\/58ed8460-f12d-44c1-87aa-ec47351b5fd7",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "13694372020385051692": {
+        "type": "shopify:\/\/apps\/analyzely-google-analytics-4\/blocks\/analyzely\/b3a3a697-6f42-4507-a5ae-c447f6da2c9d",
         "disabled": false,
         "settings": {
         }
